@@ -8,3 +8,7 @@ There are two files:
   2. app.js
   
 The rest is pretty self-explanatory, I guess.
+
+Here is a preview:
+
+https://imgur.com/a/K6AINwa
