@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset=."UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Snake and Ladder</title>
+  <style>
+    body {
+      background: teal;
+      color: white;
+      font-family: 'Segoe UI Light', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .container {
+      margin: 2% 10% 1% 10%;
+
+    }
+    .card {
+      border-radius: 10px;
+      background: rgb(29, 29, 29);
+      padding: 20px;
+      min-width: 700px;
+    }
+    .header {
+      border-bottom: white solid 1px;
+    }
+    .header h1 {
+      text-align: center;
+      font-size: 40px;
+    }
+    td.message-board-col {
+      border-left: 1px solid white;
+      padding: 0px 20px 0px 20px;
+    }
+    div.game table {
+      margin: 20px; 
+      vertical-align: 50%;
+      min-width: 500px;
+    }
+    div.game table tr{
+      text-align: center;
+    }
+    div.game table td {
+      height: 100px;
+      width: 100px;
+      color: white;
+      font-size: 30px;
+      background:rgb(17, 17, 17);
+    }
+    span.bad {
+      color : red;
+    }
+    span.good {
+      color : rgb(229, 255, 0);
+    }
+    div.greenPlayer {
+      background: green;
+      border-radius: 50%;
+      width: 10px; height: 10px;
+    }
+    div.bluePlayer {
+      background: blue;
+      border-radius: 50%;
+      width: 10px; height: 10px;
+    }
+    div.message-board input[type=text]{
+      width: 100px;
+      height: 100px;
+      text-align: center;
+      font-size: 60px;
+      color: red;
+      padding: 10px;
+      background: rgba(17, 17, 17, 0.692);
+      border: none;
+    }
+    
+    div.message-board input[type=button]{
+      background: rgba(17, 17, 17, 0.692);
+      font-family: monospace;
+      color: white;
+      border-radius: 0px;
+      font-size: 25px;
+      width: 200px;
+      border: none;
+      margin-top: 20px;
+      padding: 10px;
+    }
+    div.message-board input[type=button]:focus{
+      box-shadow: 0px 0px 10px black;
+      border: 0px;
+    }
+    div.score-board{
+      margin: 20px 0px 0px 0px;
+      font-size: 30px;
+    }
+    div.score-board table td{
+      text-align: right;
+      color: red;
+      padding: 10px;
+      background: rgba(17, 17, 17, 0.692);
+    }
+    div.score-board table th{
+      width: 100px;
+      text-align: right;
+    }
+    div.announce-winner{
+      position: absolute;
+      background: rgb(64, 136, 145);
+      text-align: center;
+      padding: 100px 80px;
+      opacity: 0.95;
+      display: none;
+      top: 40%;
+      left: 21%;
+      border-radius: 50%;
+    }
+    img#Snake1{
+      position: absolute;
+      opacity: 0.3;
+      height: 300px;
+      top: 300px;
+      left: 300px;
+    }
+    img#Snake2{
+      position: absolute;
+      opacity: 0.3;
+      height: 400px;
+      top: 230px;
+      left: 350px;
+    }
+    img#Ladder1{
+      position: absolute;
+      opacity: 0.3;
+      height: 300px;
+      width: 300px;
+      top: 250px;
+      left: 270px;
+    }
+    img#Ladder2{
+      position: absolute;
+      opacity: 0.3;
+      height: 180px;
+      width: 320px;
+      top: 200px;
+      left: 350px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="header">
+            <h1>Snake and Ladder</h1>
+          </div>
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="game">
+                      <table>
+                        <tbody>
+                            <tr class="5">
+                              <td class="five-5">25</td>
+                              <td class="five-4">24</td>
+                              <td class="five-3 snake"><span class="bad">3</span></td>
+                              <td class="five-2">22</td>
+                              <td class="five-1">21</td>
+                            </tr>
+                            <tr class="4">
+                              <td class="four-5">20</td>
+                              <td class="four-4">19</td>
+                              <td class="four-3">18</td>
+                              <td class="four-2 snake"><span class="bad">9</span></td>
+                              <td class="four-1 ladder"><span class="good">24</span></td>
+                            </tr>
+                            <tr class="3">
+                              <td class="three-5">15</td>
+                              <td class="three-4">14</td>
+                              <td class="three-3">13</td>
+                              <td class="three-2">12</td>
+                              <td class="three-1">11</td>
+                            </tr>
+                            <tr class="2">
+                              <td class="two-5 ladder"><span class="good">22</span></td>
+                              <td class="two-4">9</td>
+                              <td class="two-3">8</td>
+                              <td class="two-2">7</td>
+                              <td class="two-1">6</td>
+                            </tr>
+                          <tr class="1">
+                            <td class="one-5">5</td>
+                            <td class="one-4">4</td>
+                            <td class="one-3">3</td>
+                            <td class="one-2">2</td>
+                            <td class="one-1">1
+                              <div class="greenPlayer"></div> 
+                              <div class="bluePlayer"></div></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </td>
+                  <td class="message-board-col">
+                    <div class="message-board">
+                      <div class="dice">
+                        <h1>Dice</h1>
+                        <input class="throw-output" type="text" placeholder="#" disabled>
+                      </div>
+                      <div>
+                        <input class="throw-btn" type="button" value="Start">
+                      </div>
+                      <div class="score-board">
+                        <table>
+                          <tbody>
+                            <tr>
+                              <th>Green</th>
+                              <th>Blue</th>
+                            </tr>
+                            <tr>
+                              <td class="greenScore">0</td>
+                              <td class="blueScore">0</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="announce-winner">
+      <table>                  
+          <tr><td><span style= "font-size:40px;">Winner</span></td><tr>
+          <tr><td>Green Player!</td><tr>
+      </table>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
