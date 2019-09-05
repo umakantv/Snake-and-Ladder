@@ -11,4 +11,4 @@ The rest is pretty self-explanatory, I guess.
 
 Here is a preview:
 
-https://i.imgur.com/GI1YdXY.png
+![](https://i.imgur.com/GI1YdXY.png)
